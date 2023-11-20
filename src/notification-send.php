@@ -26,7 +26,7 @@
         $parse = parse_url($subscription->endpoint);
         $url = $parse['scheme'].'://'.$parse['host'];//.pathinfo(parse_url($parse['path'], PHP_URL_PATH))['dirname'];
 
-        require_once 'notifications/jwk.php';
+        require_once 'handlers/jwk.php';
     
         if(!file_exists('vapid.json')){
             throw new Exception('Vapid not defined.');
@@ -45,7 +45,7 @@
         );
 
 
-        require_once 'notifications/jwt.php';
+        require_once 'handlers/jwt.php';
         $jwt = new JWT();
 
         $expiration = time() + (12 * 60 * 60);  // 12 hours
