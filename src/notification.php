@@ -7,7 +7,7 @@
         $keys = json_decode(file_get_contents('vapid.json'), true);
 
     }else{
-        require_once 'notifications/jwk.php';
+        require_once 'handlers/jwk.php';
         $jwk = new JWK();
         $jwk->create();
 
